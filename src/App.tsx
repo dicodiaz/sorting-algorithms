@@ -8,6 +8,7 @@ import { sleep } from './logic/utils';
 
 const App: FC = () => {
   const [chartDataset, setChartDataset] = useState(unsortedData);
+  const [chartColoredIndex, setChartColoredIndex] = useState<number | undefined>(undefined);
   const [chartTitle, setChartTitle] = useState('Please pick algorithm');
   const [sleepMs, setSleepMs] = useState('10');
   const [disabled, setDisabled] = useState(false);
@@ -15,6 +16,7 @@ const App: FC = () => {
   const handleReset = () => {
     setChartTitle('Please pick algorithm');
     setChartDataset(unsortedData);
+    setChartColoredIndex(undefined);
   };
 
   return (
@@ -25,8 +27,12 @@ const App: FC = () => {
     >
       <Row className="mx-0 g-0 justify-content-center" xs="auto">
         <Col>
-          <VerticalBarChart title={chartTitle} dataset={chartDataset} />
-          <Row className="mx-0 g-0" md={6}>
+          <VerticalBarChart
+            title={chartTitle}
+            dataset={chartDataset}
+            coloredIndex={chartColoredIndex}
+          />
+          <Row className="mx-0 g-0 gy-2" xs={3} sm={4} md={5} lg={6} xl={7} xxl={7}>
             {sortingAlgorithms.map((sortingAlgorithm) => {
               const { id, name, implementation } = sortingAlgorithm;
 
@@ -35,7 +41,9 @@ const App: FC = () => {
                 const history = implementation(chartDataset);
                 setDisabled(true);
                 for (let i = 0; i < history.length; i++) {
-                  setChartDataset(history[i]);
+                  const { currentArray, currentIndex } = history[i];
+                  setChartDataset(currentArray);
+                  setChartColoredIndex(currentIndex);
                   await sleep(Number(sleepMs));
                 }
                 setDisabled(false);

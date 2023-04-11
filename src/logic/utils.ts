@@ -4,4 +4,9 @@ export const swapElements = (array: number[], index1: number, index2: number) =>
 
 export const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-export type SortingAlgorithmImplementation = (array: number[]) => number[][];
+export type SortingAlgorithmReturn = {
+  currentArray: number[];
+  currentIndex?: number;
+}[];
+
+export type SortingAlgorithmImplementation = (array: number[]) => SortingAlgorithmReturn;

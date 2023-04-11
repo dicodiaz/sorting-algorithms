@@ -1,5 +1,6 @@
 import bubbleSort from '../logic/bubble-sort';
 import insertionSort from '../logic/insertion-sort';
+import mergeSort from '../logic/merge-sort';
 import selectionSort from '../logic/selection-sort';
 import { SortingAlgorithmImplementation } from '../logic/utils';
 
@@ -63,7 +64,7 @@ const sortingAlgorithms: SortingAlgorithm[] = [
     memory: 'n',
     stable: true,
     methods: ['Merging'],
-    implementation: () => [],
+    implementation: mergeSort,
   },
 ];
 

@@ -25,17 +25,16 @@ const options: ChartOptions<'bar'> = {
 interface VerticalBarChartProps {
   title: string;
   dataset: number[];
+  coloredIndex?: number;
 }
 
-const VerticalBarChart: FC<VerticalBarChartProps> = ({ title, dataset }) => {
+const VerticalBarChart: FC<VerticalBarChartProps> = ({ title, dataset, coloredIndex }) => {
   const data: ChartData<'bar', number[], string> = {
-    labels: dataset.map(() => ''),
-    datasets: [
-      {
-        data: dataset,
-        backgroundColor: '#779933',
-      },
-    ],
+    labels: [''],
+    datasets: dataset.map((data, index) => ({
+      data: [data],
+      backgroundColor: index === coloredIndex ? '#FF3333' : '#779933',
+    })),
   };
 
   return (
