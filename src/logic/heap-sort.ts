@@ -14,13 +14,12 @@ const heapSort: SortingAlgorithmImplementation = (array) => {
     if (r < sizeOfHeap && array[r] > array[largest]) {
       largest = r;
     }
-    if (largest != rootNode) {
+    if (largest !== rootNode) {
       swapElements(array, rootNode, largest);
       history.push({ currentArray: [...array], currentIndex: largest });
       heapify(array, sizeOfHeap, largest);
     }
   };
-
   for (let i = Math.floor(newArray.length / 2) - 1; i >= 0; i--) {
     heapify(newArray, newArray.length, i);
   }

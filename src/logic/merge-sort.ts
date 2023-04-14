@@ -5,6 +5,7 @@ const mergeSort: SortingAlgorithmImplementation = (array) => {
   let newArray = [...array];
   const history: SortingAlgorithmReturn = [];
   const sortedArray: number[] = [...array];
+
   for (let width = 1; width < newArray.length; width *= 2) {
     for (let i = 0; i < newArray.length; i += 2 * width) {
       const mid = Math.min(i + width, newArray.length);
@@ -22,6 +23,7 @@ const mergeSort: SortingAlgorithmImplementation = (array) => {
     }
     newArray = [...sortedArray];
   }
+
   history.push({ currentArray: [...sortedArray] });
   return history;
 };

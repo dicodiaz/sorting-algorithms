@@ -20,4 +20,8 @@
     flex: 0 0 auto;
     width: calc(100% / 8);
   }
+
+  .vw-xxl-60 {
+    width: 60vw;
+  }
 }

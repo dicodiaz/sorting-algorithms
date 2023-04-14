@@ -30,10 +30,9 @@ const quickSort: SortingAlgorithmImplementation = (array) => {
     sort(start, j - 1);
     sort(j, end);
   };
-
   sort(0, newArray.length);
-  history.push({ currentArray: [...newArray] });
 
+  history.push({ currentArray: [...newArray] });
   return history;
 };
 

@@ -40,7 +40,7 @@ const VerticalBarChart: FC<VerticalBarChartProps> = ({ title, dataset, coloredIn
   return (
     <>
       <h1 className="display-6 text-center">{title}</h1>
-      <Bar className="vw-75" data={data} options={options} />
+      <Bar className="vw-75 vw-xxl-60" data={data} options={options} />
     </>
   );
 };
