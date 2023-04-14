@@ -2,18 +2,19 @@ import { SortingAlgorithmImplementation, SortingAlgorithmReturn, swapElements } 
 
 const bubbleSort: SortingAlgorithmImplementation = (array) => {
   const newArray = [...array];
-  const history: SortingAlgorithmReturn = [{ currentArray: [...newArray] }];
+  const length = newArray.length;
+  const history: SortingAlgorithmReturn = [{ array: [...newArray] }];
 
-  for (let i = 0; i < newArray.length - 1; i++) {
-    for (let j = 0; j < newArray.length - i - 1; j++) {
+  for (let i = 0; i < length - 1; i++) {
+    for (let j = 0; j < length - i - 1; j++) {
       if (newArray[j] > newArray[j + 1]) {
         swapElements(newArray, j, j + 1);
       }
-      history.push({ currentArray: [...newArray], currentIndex: j + 1 });
+      history.push({ array: [...newArray], primaryIndex: j + 1, secondaryIndex: length - i - 1 });
     }
   }
 
-  history.push({ currentArray: [...newArray] });
+  history.push({ array: [...newArray] });
   return history;
 };
 

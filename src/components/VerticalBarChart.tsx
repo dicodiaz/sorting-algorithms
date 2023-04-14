@@ -25,22 +25,29 @@ const options: ChartOptions<'bar'> = {
 interface VerticalBarChartProps {
   title: string;
   dataset: number[];
-  coloredIndex?: number;
+  primaryIndex?: number;
+  secondaryIndex?: number;
 }
 
-const VerticalBarChart: FC<VerticalBarChartProps> = ({ title, dataset, coloredIndex }) => {
+const VerticalBarChart: FC<VerticalBarChartProps> = ({
+  title,
+  dataset,
+  primaryIndex,
+  secondaryIndex,
+}) => {
   const data: ChartData<'bar', number[], string> = {
     labels: [''],
     datasets: dataset.map((data, index) => ({
       data: [data],
-      backgroundColor: index === coloredIndex ? '#FF3333' : '#779933',
+      backgroundColor:
+        index === primaryIndex ? '#FF3333' : index === secondaryIndex ? '#0092CC' : '#779933',
     })),
   };
 
   return (
     <>
       <h1 className="display-6 text-center">{title}</h1>
-      <Bar className="vw-75 vw-xxl-60" data={data} options={options} />
+      <Bar data={data} options={options} />
     </>
   );
 };

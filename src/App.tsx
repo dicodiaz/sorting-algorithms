@@ -7,16 +7,18 @@ import unsortedData from './data/unsorted-data';
 import { sleep } from './logic/utils';
 
 const App: FC = () => {
-  const [chartDataset, setChartDataset] = useState(unsortedData);
-  const [chartColoredIndex, setChartColoredIndex] = useState<number | undefined>(undefined);
   const [chartTitle, setChartTitle] = useState('Please pick algorithm');
+  const [chartDataset, setChartDataset] = useState(unsortedData);
+  const [chartPrimaryIndex, setChartPrimaryIndex] = useState<number | undefined>(undefined);
+  const [chartSecondaryIndex, setChartSecondaryIndex] = useState<number | undefined>(undefined);
   const [sleepMs, setSleepMs] = useState('10');
   const [disabled, setDisabled] = useState(false);
 
   const handleReset = () => {
     setChartTitle('Please pick algorithm');
     setChartDataset(unsortedData);
-    setChartColoredIndex(undefined);
+    setChartPrimaryIndex(undefined);
+    setChartSecondaryIndex(undefined);
   };
 
   return (
@@ -30,9 +32,10 @@ const App: FC = () => {
           <VerticalBarChart
             title={chartTitle}
             dataset={chartDataset}
-            coloredIndex={chartColoredIndex}
+            primaryIndex={chartPrimaryIndex}
+            secondaryIndex={chartSecondaryIndex}
           />
-          <Row className="mx-0 g-0 gy-2" xs={3} sm={4} md={5} lg={6} xl={7} xxl={7}>
+          <Row className="mx-0 g-0 gy-2" xs={3} sm={4} md={5} lg={6} xl={7}>
             {sortingAlgorithms.map((sortingAlgorithm) => {
               const { id, name, implementation } = sortingAlgorithm;
 
@@ -41,9 +44,10 @@ const App: FC = () => {
                 const history = implementation(chartDataset);
                 setDisabled(true);
                 for (let i = 0; i < history.length; i++) {
-                  const { currentArray, currentIndex } = history[i];
-                  setChartDataset(currentArray);
-                  setChartColoredIndex(currentIndex);
+                  const { array, primaryIndex, secondaryIndex } = history[i];
+                  setChartDataset(array);
+                  setChartPrimaryIndex(primaryIndex);
+                  setChartSecondaryIndex(secondaryIndex);
                   await sleep(Number(sleepMs));
                 }
                 setDisabled(false);

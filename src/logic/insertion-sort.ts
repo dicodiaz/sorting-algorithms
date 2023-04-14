@@ -2,21 +2,22 @@ import { SortingAlgorithmImplementation, SortingAlgorithmReturn } from './utils'
 
 const insertionSort: SortingAlgorithmImplementation = (array) => {
   const newArray = [...array];
-  const history: SortingAlgorithmReturn = [{ currentArray: [...newArray] }];
+  const length = newArray.length;
+  const history: SortingAlgorithmReturn = [{ array: [...newArray] }];
 
-  for (let i = 1; i < newArray.length; i++) {
+  for (let i = 1; i < length; i++) {
     const key = newArray[i];
     let j = i - 1;
     while (j >= 0 && newArray[j] > key) {
       newArray[j + 1] = newArray[j];
-      history.push({ currentArray: [...newArray], currentIndex: j });
-      j = j - 1;
+      history.push({ array: [...newArray], primaryIndex: j + 1, secondaryIndex: i });
+      j--;
     }
     newArray[j + 1] = key;
-    history.push({ currentArray: [...newArray], currentIndex: j + 1 });
+    history.push({ array: [...newArray], secondaryIndex: i });
   }
 
-  history.push({ currentArray: [...newArray] });
+  history.push({ array: [...newArray] });
   return history;
 };
 

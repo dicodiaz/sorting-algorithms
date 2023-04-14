@@ -2,21 +2,21 @@ import { SortingAlgorithmImplementation, SortingAlgorithmReturn, swapElements } 
 
 const selectionSort: SortingAlgorithmImplementation = (array) => {
   const newArray = [...array];
-  const history: SortingAlgorithmReturn = [{ currentArray: [...newArray] }];
+  const length = newArray.length;
+  const history: SortingAlgorithmReturn = [{ array: [...newArray] }];
 
-  for (let i = 0; i < newArray.length - 1; i++) {
+  for (let i = 0; i < length - 1; i++) {
     let minIndex = i;
-    for (let j = i + 1; j < newArray.length; j++) {
+    for (let j = i + 1; j < length; j++) {
       if (newArray[j] < newArray[minIndex]) {
         minIndex = j;
       }
-      history.push({ currentArray: [...newArray], currentIndex: j });
+      history.push({ array: [...newArray], primaryIndex: j, secondaryIndex: i });
     }
     swapElements(newArray, minIndex, i);
-    history.push({ currentArray: [...newArray], currentIndex: i });
   }
 
-  history.push({ currentArray: [...newArray] });
+  history.push({ array: [...newArray] });
   return history;
 };
 

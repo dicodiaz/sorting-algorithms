@@ -2,33 +2,39 @@ import { SortingAlgorithmImplementation, SortingAlgorithmReturn, swapElements } 
 
 const heapSort: SortingAlgorithmImplementation = (array) => {
   const newArray = [...array];
+  const length = newArray.length;
   const history: SortingAlgorithmReturn = [];
 
-  const heapify = (array: number[], sizeOfHeap: number, rootNode: number) => {
+  const heapify = (
+    array: number[],
+    sizeOfHeap: number,
+    rootNode: number,
+    secondaryIndex: number,
+  ) => {
     let largest = rootNode;
-    const l = 2 * rootNode + 1;
-    const r = 2 * rootNode + 2;
-    if (l < sizeOfHeap && array[l] > array[largest]) {
-      largest = l;
+    const left = 2 * rootNode + 1;
+    const right = 2 * rootNode + 2;
+    if (left < sizeOfHeap && array[left] > array[largest]) {
+      largest = left;
     }
-    if (r < sizeOfHeap && array[r] > array[largest]) {
-      largest = r;
+    if (right < sizeOfHeap && array[right] > array[largest]) {
+      largest = right;
     }
     if (largest !== rootNode) {
       swapElements(array, rootNode, largest);
-      history.push({ currentArray: [...array], currentIndex: largest });
-      heapify(array, sizeOfHeap, largest);
+      history.push({ array: [...array], primaryIndex: largest, secondaryIndex });
+      heapify(array, sizeOfHeap, largest, secondaryIndex);
     }
   };
-  for (let i = Math.floor(newArray.length / 2) - 1; i >= 0; i--) {
-    heapify(newArray, newArray.length, i);
+  for (let i = Math.floor(length / 2) - 1; i >= 0; i--) {
+    heapify(newArray, length, i, i);
   }
-  for (let i = newArray.length - 1; i > 0; i--) {
+  for (let i = length - 1; i > 0; i--) {
     swapElements(newArray, 0, i);
-    heapify(newArray, i, 0);
+    heapify(newArray, i, 0, i);
   }
 
-  history.push({ currentArray: [...newArray] });
+  history.push({ array: [...newArray] });
   return history;
 };
 
