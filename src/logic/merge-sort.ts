@@ -5,10 +5,10 @@ const mergeSort: SortingAlgorithmImplementation = (array) => {
   let newArray = [...array];
   const history: SortingAlgorithmReturn = [];
   const sortedArray: number[] = [...array];
-  for (let width = 1; width < array.length; width *= 2) {
-    for (let i = 0; i < array.length; i += 2 * width) {
-      const mid = Math.min(i + width, array.length);
-      const end = Math.min(i + 2 * width, array.length);
+  for (let width = 1; width < newArray.length; width *= 2) {
+    for (let i = 0; i < newArray.length; i += 2 * width) {
+      const mid = Math.min(i + width, newArray.length);
+      const end = Math.min(i + 2 * width, newArray.length);
       let j = i;
       let k = mid;
       for (let l = i; l < end; l++) {

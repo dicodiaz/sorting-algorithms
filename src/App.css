@@ -7,3 +7,17 @@
 .vw-75 {
   width: 75vw;
 }
+
+@media screen and (min-width: 1200px) {
+  .row-cols-xl-7 > * {
+    flex: 0 0 auto;
+    width: calc(100% / 7);
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .row-cols-xxl-8 > * {
+    flex: 0 0 auto;
+    width: calc(100% / 8);
+  }
+}
