@@ -1,113 +1,138 @@
-# Frontend Mentor - IP address tracker solution
+<a name="readme-top"></a>
 
-This is a solution to the [IP address tracker challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+# 📗 Table of Contents
 
-## Table of contents
+- [📖 About the Project](#about-project)
+  - [🗝️ Key Features](#key-features)
+  - [🛠️ Built With](#built-with)
+- [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+# 📖 Sorting Algorithms <a name="about-project"></a>
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+**Sorting Algorithms** is a visualization of 9+ sorting algorithms, including Quick Sort, Merge Sort, and more!
 
-## Overview
+## 🗝️ Key Features <a name="key-features"></a>
 
-### The challenge
+- Implements `typescript`
+- Implements `chart.js`
 
-Users should be able to:
+## 🛠️ Built With <a name="built-with"></a>
 
-- View the optimal layout for each page depending on their device's screen size
-- See hover states for all interactive elements on the page
-- See their own IP address on the map on the initial page load
-- Search for any IP addresses or domains and see the key information and location
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://react.dev">React</a></li>
+  </ul>
+  <ul>
+    <li><a href="https://vitejs.dev/">Vite</a></li>
+  </ul>
+</details>
 
-### Screenshot
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-![](./screenshot.jpg)
+## 🚀 Live Demo <a name="live-demo"></a>
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+- [https://sorting-algorithms.dicodiaz.com.co/](https://sorting-algorithms.dicodiaz.com.co/)
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
+## 💻 Getting Started <a name="getting-started"></a>
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+To get a local copy up and running, follow these steps.
 
-### Links
+### Prerequisites
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+In order to run this project you need:
 
-## My process
+- Install [Node.js](https://nodejs.org/en)
+- Install [pnpm](https://pnpm.io/installation)
 
-### Built with
+### Setup
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+Clone this repository to your desired folder:
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
-
-### What I learned
-
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+```sh
+  cd my-folder
+  git clone git@github.com:dicodiaz/sorting-algorithms.git
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+### Install
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+Install this project with:
 
-### Continued development
+```sh
+  cd sorting-algorithms
+  pnpm install
+```
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+### Usage
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+To run the project, execute the following commands:
 
-### Useful resources
+```sh
+  pnpm dev
+```
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+### Deployment
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+There's a CD pipeline set up to track the `main` branch.
 
-## Author
+Please open a PR from your feature branch to `main` in order to contribute.
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+## 👥 Authors <a name="authors"></a>
 
-## Acknowledgments
+👤 **Dico Diaz Dussan**
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+- GitHub: [@dicodiaz](https://github.com/dicodiaz)
+- LinkedIn: [Dico Diaz Dussan](https://www.linkedin.com/in/dico-diaz-dussan/)
+- Portfolio: [portfolio.dicodiaz.com.co](https://portfolio.dicodiaz.com.co)
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] Add more sorting algorithms
+- [ ] Implement unit tests
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## ⭐️ Show your support <a name="support"></a>
+
+Give a ⭐️ if you like this project!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+- A huge thanks to [Microverse](https://www.microverse.org) for their constant support.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./MIT.md) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
